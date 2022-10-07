@@ -1,5 +1,13 @@
 import React, { useState } from "react";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faList, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import Header from "./components/Header/Header";
+
 import "./App.scss";
+
+library.add(faList, faTrash);
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -29,39 +37,49 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>To Do List</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="App-container">
+      <Header />
+
+      <form onSubmit={handleSubmit} className="form">
         <input
           value={input}
           type="text"
           onChange={(event) => {
             setInput(event.target.value);
           }}
+          className="inputText"
         ></input>
-        <input type="submit"></input>
+        <input type="submit" value="Add task" className="inputSubmit"></input>
       </form>
-      {tasks.map((task, index) => {
-        return (
-          <div className="tasks" key={index}>
-            <input
-              checked={task.isDone}
-              type="checkbox"
-              onChange={() => {
-                handleCheck(index);
-              }}
-            />
-            <span className={task.isDone ? "isDone" : null}>{task.title}</span>
-            <button
-              onClick={() => {
-                handleDelete(index);
-              }}
-            >
-              delete
-            </button>
-          </div>
-        );
-      })}
+      <div className="tasks-container">
+        {tasks.map((task, index) => {
+          return (
+            <div className="tasks" key={index}>
+              <input
+                checked={task.isDone}
+                type="checkbox"
+                onChange={() => {
+                  handleCheck(index);
+                }}
+              />
+              <span className={task.isDone ? "isDone" : "taskTitle"}>
+                {task.title}
+              </span>
+              <FontAwesomeIcon
+                icon="fa-solid fa-trash"
+                onClick={() => {
+                  handleDelete(index);
+                }}
+                className="trash"
+              />
+            </div>
+          );
+        })}
+      </div>
+      <p className="signature">
+        Made with <span className="signatureBold">React</span> by
+        <span className="signatureBold"> Quasar</span>
+      </p>
     </div>
   );
 }
