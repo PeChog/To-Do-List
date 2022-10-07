@@ -25,6 +25,9 @@ body {
     border: solid 1px #7d6ddc;
     // border-color: #7d6ddc;
     border-radius: 5px;
+    font-family: "Source Sans Pro", sans-serif;
+
+    font-size: 15px;
   }
   .inputSubmit {
     border: none;
@@ -34,7 +37,7 @@ body {
     font-family: "Source Sans Pro", sans-serif;
   }
   .tasks-container {
-    margin-top: 5vh;
+    margin-top: 2vh;
 
     .tasks {
       display: flex;
