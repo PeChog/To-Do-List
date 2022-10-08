@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faList, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faList,
+  faTrash,
+  faSun,
+  faMoon,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Header from "./components/Header/Header";
 
 import "./App.scss";
 
-library.add(faList, faTrash);
+library.add(faList, faTrash, faSun, faMoon);
 
 function App() {
   const [tasks, setTasks] = useState([]);
