@@ -1,17 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 body {
-  align-items: center;
-  height: 100vh;
   font-family: "Source Sans Pro", sans-serif;
 }
 
-.App-container {
+.body-light {
+  background-color: white;
+}
+
+.body-dark {
+  background-color: black;
+  color: white;
+}
+
+.App-container-light {
   margin: 0 auto;
   width: 90vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
+  height: 100vh;
   .form {
     margin-top: 5vh;
     display: flex;

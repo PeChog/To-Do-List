@@ -12,6 +12,17 @@ library.add(faList, faTrash);
 function App() {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
+  const [theme, setTheme] = useState(false);
+
+  const switchThemeToggle = () => {
+    if (theme) {
+      document.body.className = "body-light";
+      setTheme(false);
+    } else {
+      document.body.className = "body-dark";
+      setTheme(true);
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,9 +48,12 @@ function App() {
   };
 
   return (
-    <div className="App-container">
-      <Header />
-
+    <div className="App-container-light">
+      <Header
+        theme={theme}
+        setTheme={setTheme}
+        switchThemeToggle={switchThemeToggle}
+      />
       <form onSubmit={handleSubmit} className="form">
         <input
           value={input}
@@ -76,6 +90,7 @@ function App() {
           );
         })}
       </div>
+
       <p className="signature">
         Made with <span className="signatureBold">React</span> by
         <span className="signatureBold"> Quasar</span>
