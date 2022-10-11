@@ -13,10 +13,8 @@ const Signup = ({ handleToken }) => {
   const handleSignup = async (event) => {
     try {
       event.preventDefault();
-      //je viens reset le message d'erreur à chaque tentative
+
       setErrorMessage("");
-      //une requête au serveur pour créer un nouveau user
-      // axios.post("url", body)
 
       const response = await axios.post("http://localhost:3001/user/signup", {
         email: email,
@@ -27,12 +25,10 @@ const Signup = ({ handleToken }) => {
       if (response.data) {
         console.log("J'ai bien réussi à créer un compte");
         handleToken(response.data.token);
-        //Rediriger l'utilisateur vers la page principale
+
         navigate("/");
       }
     } catch (error) {
-      //   console.log(error.message);
-
       setErrorMessage({ error: error.message });
     }
   };
