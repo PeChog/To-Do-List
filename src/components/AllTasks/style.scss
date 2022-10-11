@@ -1,0 +1,23 @@
+.tasks-container {
+  margin-top: 2vh;
+
+  .tasks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+
+    gap: 1vw;
+  }
+  .trash {
+    color: #5b48d1;
+  }
+
+  .isDone {
+    text-decoration: line-through;
+    font-size: 25px;
+  }
+  .taskTitle {
+    font-size: 25px;
+  }
+}

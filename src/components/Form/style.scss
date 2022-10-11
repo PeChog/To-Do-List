@@ -1,0 +1,32 @@
+.form {
+  margin-top: 5vh;
+  display: flex;
+  gap: 3vw;
+  justify-content: center;
+}
+.inputText {
+  width: 30vw;
+  height: 5vh;
+  background-color: #f2f7fd;
+  border: solid 1px #7d6ddc;
+  border-radius: 5px;
+  font-family: "Source Sans Pro", sans-serif;
+
+  font-size: 15px;
+}
+.inputSubmit {
+  border: none;
+  background-color: #5b48d1;
+  border-radius: 5px;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.inputSubmit:hover {
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  border: #5b48d1 solid 1px;
+  font-family: "Source Sans Pro", sans-serif;
+}

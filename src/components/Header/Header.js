@@ -1,31 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate, Link } from "react-router-dom";
+
+import Toggle from "../Toggle/Toggle";
 
 import "./style.scss";
 
-const Header = ({ switchThemeToggle, theme }) => {
+const Header = ({ switchThemeToggle, theme, token, setUser }) => {
+  const navigate = useNavigate();
   return (
     <div className="header-container">
       <section className="left-header">
         <FontAwesomeIcon icon="fa-solid fa-list" className="icon" />
         <h1 className="title">ToDo List</h1>
       </section>
-      <section className="right-header">
-        {theme ? (
-          <div className="lightDark">
-            <FontAwesomeIcon
-              icon="fa-solid fa-moon"
-              className="lightDarkIcon"
-            />
-            <span>Dark Mode</span>
-          </div>
-        ) : (
-          <div className="lightDark">
-            <FontAwesomeIcon icon="fa-solid fa-sun" className="lightDarkIcon" />
-            <span>Light mode</span>
-          </div>
-        )}
-        <input type="checkbox" className="switch" onClick={switchThemeToggle} />
-      </section>
+      <div>
+        <Link to="signup"> Sign Up</Link>
+        <Link to="signin">Sign In</Link>
+      </div>
+      <Toggle switchThemeToggle={switchThemeToggle} theme={theme} />
     </div>
   );
 };

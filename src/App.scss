@@ -12,7 +12,7 @@ body {
   color: white;
 }
 
-.App-container-light {
+.App-container {
   margin: 0 auto;
   width: 90vw;
   display: flex;
@@ -20,67 +20,4 @@ body {
 
   align-items: center;
   height: 100vh;
-  .form {
-    margin-top: 5vh;
-    display: flex;
-    gap: 3vw;
-    justify-content: center;
-  }
-  .inputText {
-    width: 30vw;
-    height: 5vh;
-    background-color: #f2f7fd;
-    border: solid 1px #7d6ddc;
-    // border-color: #7d6ddc;
-    border-radius: 5px;
-    font-family: "Source Sans Pro", sans-serif;
-
-    font-size: 15px;
-  }
-  .inputSubmit {
-    border: none;
-    background-color: #5b48d1;
-    border-radius: 5px;
-    color: white;
-    font-family: "Source Sans Pro", sans-serif;
-  }
-  .tasks-container {
-    margin-top: 2vh;
-
-    .tasks {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 2vh;
-
-      gap: 1vw;
-    }
-    .trash {
-      color: #5b48d1;
-    }
-
-    .isDone {
-      text-decoration: line-through;
-      font-size: 25px;
-    }
-    .taskTitle {
-      font-size: 25px;
-    }
-  }
-  .signature {
-    margin-top: 5vh;
-    color: #5b48d1;
-    .signatureBold {
-      font-weight: bold;
-    }
-  }
-}
-
-.inputSubmit:hover {
-  border: none;
-  background-color: white;
-  border-radius: 5px;
-  color: black;
-  border: #5b48d1 solid 1px;
-  font-family: "Source Sans Pro", sans-serif;
 }
